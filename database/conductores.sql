@@ -18,7 +18,7 @@ apellido varchar(50) not null,
 contraseña varchar(60) not null
 );
 
-create table Móvil(
+create table Movil(
 ID_Movil int primary key not null,
 Placa varchar(6) not null,
 T_vinculación varchar(20) not null,
@@ -69,7 +69,7 @@ Inicio datetime not null,
 ID_Conductor int not null,
 imagen blob null,
 foreign key (ID_Conductor) references Conductor (ID_Conductor),
-foreign key (ID_Movil) references Móvil (ID_Movil)
+foreign key (ID_Movil) references Movil (ID_Movil)
 );
 
 INSERT INTO Conductor (ID_Conductor, nombre, apellido, telefono, fechaExp, fechaVen) 
@@ -86,12 +86,12 @@ VALUES
 (3, 'José', 'García', 'jose789');
 select * from Administrador;
 
-INSERT INTO Móvil (ID_Movil, Placa, T_vinculación, RTM, Exp_RTM, Ven_RTM, RCC, Exp_RCC, Ven_RCC, RCE, Exp_RCE, Ven_RCE, SOAT, Exp_SOAT, Ven_SOAT, Exp_Operacion, Ven_Operacion, Exp_Transito, Ven_Transito) 
+INSERT INTO Movil (ID_Movil, Placa, T_vinculación, RTM, Exp_RTM, Ven_RTM, RCC, Exp_RCC, Ven_RCC, RCE, Exp_RCE, Ven_RCE, SOAT, Exp_SOAT, Ven_SOAT, Exp_Operacion, Ven_Operacion, Exp_Transito, Ven_Transito) 
 VALUES 
 (0126, 'ABC123', 'Vinculado', 2345678, '2021-06-01', '2024-06-01', 123456, '2021-06-01', '2024-06-01', 654321, '2021-06-01', '2024-06-01', 789012, '2021-06-01', '2024-06-01', '2021-06-01', '2024-06-04', '2021-06-03', '2024-06-02'),
 (0030, 'XYZ456', 'No vinculado', 3456789, '2022-07-15', '2025-07-15', 234567, '2022-07-15', '2025-07-15', 765432, '2022-07-15', '2025-07-15', 890123, '2022-07-15', '2025-07-15', '2021-06-02', '2024-06-01', '2021-06-03', '2024-06-04'),
 (0032, 'LMN789', 'Vinculado', 4567890, '2020-10-10', '2023-10-10', 345678, '2020-10-10', '2023-10-10', 876543, '2020-10-10', '2023-10-10', 901234, '2020-10-10', '2023-10-10', '2021-06-03', '2024-06-02', '2021-06-01', '2024-06-04');
-SELECT * FROM Móvil;
+SELECT * FROM Movil;
 
 
 INSERT INTO Preoperacional (

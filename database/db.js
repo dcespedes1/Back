@@ -3,11 +3,16 @@ import dotenv from 'dotenv';
 
 dotenv.config(); 
 
-// Verificación de que las variables de entorno están cargadas
-if (!process.env.DB_HOST || !process.env.DB_USER || !process.env.DB_PASS || !process.env.DB_SCHEMA || !process.env.DB_PORT) {
+
+if (!process.env.DB_HOST || 
+    !process.env.DB_USER || 
+    process.env.DB_PASS === undefined || // Acepta cadenas vacías
+    !process.env.DB_SCHEMA || 
+    !process.env.DB_PORT) {
     console.error("Faltan variables de entorno");
     process.exit(1); // Salir si faltan las variables
 }
+
 
 const db = new Sequelize(
     process.env.DB_SCHEMA,   // El nombre de la base de datos
