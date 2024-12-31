@@ -1,5 +1,4 @@
 import Movil from '../models/movil.js';
-
 // Obtener todos los registros de Movil
 export const getAllMoviles = async (req, res) => {
     try {
@@ -9,7 +8,6 @@ export const getAllMoviles = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
-
 // Obtener un registro de Movil por ID
 export const getMovil = async (req, res) => {
     try {
@@ -27,7 +25,6 @@ export const getMovil = async (req, res) => {
         res.status(500).json({ error: 'Error al obtener el movil' });
     }
 };
-
 // Crear un registro de Movil
 export const createMovil = async (req, res) => {
     try {
