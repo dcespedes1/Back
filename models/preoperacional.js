@@ -99,7 +99,7 @@ const Preoperacional = db.define('Preoperacional', {
     allowNull: false
   },
   Inicio: {
-    type: DataTypes.DATE,
+    type: DataTypes.TIME,
     allowNull: false
   },
   ID_Conductor: {

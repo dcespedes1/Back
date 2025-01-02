@@ -2,6 +2,7 @@ import express from 'express';
 import { getAllMoviles, getMovil, createMovil, updateMovil, deleteMovil, validateMovil } from '../controllers/movil.js';
 import { createConductor, deleteConductor, getAllConductores, getConductores, updateConductor } from '../controllers/conductores.js';
 import { createPreoperacional, deletePreoperacional, getAllPreoperacionales, getPreoperacional, updatePreoperacional } from '../controllers/preoperacional.js';
+import {validateAdmin, getAllAdmins} from '../controllers/admin.js';
 
 const router = express.Router();
 /* rutas para movil */
@@ -26,5 +27,8 @@ router.post('/Preoperacional', createPreoperacional);
 router.put('/Preoperacional/:ID', updatePreoperacional);
 router.delete('/Preoperacional/:ID', deletePreoperacional);
 
+/* rutas para admin */  
+router.post('/Admin/login', validateAdmin);
+router.get('/Admin', getAllAdmins);
 
 export default router;
