@@ -11,16 +11,16 @@ export const getAllAdmins = async (req, res) => {
 
 
 export const validateAdmin = async (req, res) => {
-    const { ID, contraseña } = req.body;
+    const { nombre, contraseña } = req.body;
   
     try {
       // Validación de los campos: que no sean vacíos
-      if (!ID || !contraseña) {
-        return res.status(400).json({ error: 'Los campos "ID" y "contraseña" son obligatorios' });
+      if (!nombre || !contraseña) {
+        return res.status(400).json({ error: 'Los campos "nombre" y "contraseña" son obligatorios' });
       }
   
       // Consultar si existe un Admin con el ID_Admin y Nombre proporcionados
-      const existingAdmin = await Admin.findOne({ where: { ID, contraseña } });
+      const existingAdmin = await Admin.findOne({ where: { nombre, contraseña } });
   
       // Si no se encuentra un registro que coincida
       if (!existingAdmin) {
